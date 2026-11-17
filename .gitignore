@@ -1,0 +1,7 @@
+node_modules/
+data/db.json
+data/db.json.tmp
+.env
+
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+/graft/

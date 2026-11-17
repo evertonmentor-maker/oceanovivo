@@ -1,0 +1,58 @@
+[
+  {
+    "nome": "Projeto TAMAR",
+    "atuacao": "Nacional · base em Florianópolis",
+    "tema": "Tartarugas marinhas",
+    "descricao": "Pesquisa, conservação e manejo das tartarugas marinhas no Brasil desde 1980. Mantém base de pesquisa e centro de visitantes na Barra da Lagoa, em Florianópolis.",
+    "site": "https://www.tamar.org.br"
+  },
+  {
+    "nome": "Associação R3 Animal",
+    "atuacao": "Florianópolis/SC",
+    "tema": "Resgate de fauna marinha",
+    "descricao": "Resgata, reabilita e devolve à natureza animais silvestres e marinhos, como aves e mamíferos atingidos por óleo, lixo e redes de pesca.",
+    "site": "https://www.r3animal.org.br"
+  },
+  {
+    "nome": "Instituto Australis / Projeto Baleia Franca",
+    "atuacao": "Imbituba e litoral sul de SC",
+    "tema": "Baleia-franca e ecossistemas costeiros",
+    "descricao": "Pesquisa e proteção da baleia-franca-austral, que usa o litoral catarinense para reprodução. Atua na APA da Baleia Franca e em educação ambiental.",
+    "site": "https://www.baleiafranca.org.br"
+  },
+  {
+    "nome": "Instituto Ekko Brasil",
+    "atuacao": "Florianópolis/SC",
+    "tema": "Ecossistemas costeiros e lontras",
+    "descricao": "Conservação de ecossistemas aquáticos e costeiros, com o Projeto Lontra na Lagoa do Peri e ações de educação ambiental.",
+    "site": "https://www.ekkobrasil.org.br"
+  },
+  {
+    "nome": "SOS Mata Atlântica",
+    "atuacao": "Nacional",
+    "tema": "Qualidade da água",
+    "descricao": "Coordena o programa Observando os Rios, que capacita voluntários a monitorar a qualidade da água de rios que deságuam no litoral.",
+    "site": "https://www.sosma.org.br"
+  },
+  {
+    "nome": "Instituto Lixo Zero Brasil",
+    "atuacao": "Nacional",
+    "tema": "Resíduos e lixo no mar",
+    "descricao": "Promove o conceito Lixo Zero em cidades, empresas e eventos, reduzindo os resíduos que acabam em rios, praias e oceanos.",
+    "site": "https://ilzb.org"
+  },
+  {
+    "nome": "Sea Shepherd Brasil",
+    "atuacao": "Nacional",
+    "tema": "Proteção da vida marinha",
+    "descricao": "Organiza mutirões de limpeza de praias e campanhas contra a poluição plástica e a pesca predatória no litoral brasileiro.",
+    "site": "https://seashepherd.org.br"
+  },
+  {
+    "nome": "Oceana Brasil",
+    "atuacao": "Nacional",
+    "tema": "Políticas públicas para o oceano",
+    "descricao": "Atua por leis e políticas de redução do plástico descartável e de gestão pesqueira sustentável.",
+    "site": "https://brasil.oceana.org"
+  }
+]

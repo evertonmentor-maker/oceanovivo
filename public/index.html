@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Oceano Vivo — Balneabilidade das praias de Santa Catarina</title>
+  <meta name="description" content="Acompanhe no mapa a balneabilidade e a poluição das praias de Santa Catarina, com previsão do tempo e condições do mar.">
+  <meta name="theme-color" content="#0A4D68">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/">
+        <img src="/img/logo.svg" alt="">
+        <span class="brand-name">Oceano<span>Vivo</span></span>
+      </a>
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <nav class="nav" aria-label="Principal">
+        <a href="#monitor">Mapa</a>
+        <a href="#guia">Como ler</a>
+        <a href="#ongs">ONGs</a>
+        <a href="/admin" class="nav-cta">Área restrita</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow" style="color:var(--leaf-400)">Santa Catarina · litoral</span>
+        <h1>Praias limpas, <em>oceano vivo.</em></h1>
+        <p>Veja no mapa se a água da sua praia está própria para banho, os níveis de coliformes fecais,
+          sinais de poluição e a previsão do tempo e do mar antes de sair de casa.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#monitor">Ver o mapa das praias</a>
+          <a class="btn btn-ghost" href="#ongs">Conheça quem cuida do mar</a>
+        </div>
+        <div class="stats" aria-live="polite">
+          <div class="stat"><strong id="stat-total">–</strong><span>praias monitoradas</span></div>
+          <div class="stat"><strong id="stat-ok">–</strong><span>próprias para banho</span></div>
+          <div class="stat"><strong id="stat-bad">–</strong><span>impróprias</span></div>
+          <div class="stat"><strong id="stat-date">–</strong><span>última coleta</span></div>
+        </div>
+      </div>
+      <svg class="hero-waves" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 40 C240 90 480 0 720 40 S1200 80 1440 30 V90 H0 Z" fill="#F3FBFA" opacity=".35"/>
+        <path d="M0 60 C260 20 520 90 780 55 S1220 30 1440 60 V90 H0 Z" fill="#F3FBFA"/>
+      </svg>
+    </section>
+
+    <section id="monitor" class="monitor">
+      <div class="container">
+        <div class="monitor-card">
+          <aside class="sidebar">
+            <div class="filters">
+              <label class="visually-hidden" for="search">Buscar praia</label>
+              <input id="search" class="input" type="search" placeholder="Buscar praia ou município…" autocomplete="off">
+              <label class="visually-hidden" for="city">Município</label>
+              <select id="city" class="input"><option value="">Todos os municípios</option></select>
+              <div class="chips" role="group" aria-label="Filtrar por situação">
+                <button class="chip" data-status="" aria-pressed="true">Todas</button>
+                <button class="chip" data-status="propria" aria-pressed="false">Próprias</button>
+                <button class="chip" data-status="impropria" aria-pressed="false">Impróprias</button>
+                <button class="chip" data-status="sem_dados" aria-pressed="false">Sem dados</button>
+              </div>
+            </div>
+            <ul id="beach-list" class="beach-list" aria-label="Praias"></ul>
+          </aside>
+          <div id="map" role="region" aria-label="Mapa das praias"></div>
+        </div>
+        <div class="legend">
+          <span><i class="dot propria"></i> Própria para banho</span>
+          <span><i class="dot impropria"></i> Imprópria para banho</span>
+          <span><i class="dot sem_dados"></i> Sem dados recentes</span>
+        </div>
+        <p class="map-note" id="map-note"></p>
+      </div>
+    </section>
+
+    <section id="guia" class="guide">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Como ler os dados</span>
+          <h2>O que significa "própria" ou "imprópria"?</h2>
+          <p>A balneabilidade segue a Resolução CONAMA nº 274/2000, que mede bactérias de origem fecal
+            na água do mar. Em Santa Catarina, as coletas oficiais são feitas pelo IMA-SC.</p>
+        </div>
+        <div class="guide-grid">
+          <div class="guide-card">
+            <div class="ic">🦠</div>
+            <h3>E. coli</h3>
+            <p>Indicador principal de contaminação por esgoto. Até <strong>800 NMP/100 mL</strong> a água é
+              considerada satisfatória. Acima de <strong>2.000</strong> em uma amostra, a praia fica imprópria.</p>
+          </div>
+          <div class="guide-card">
+            <div class="ic">🧫</div>
+            <h3>Coliformes termotolerantes</h3>
+            <p>Os "coliformes fecais". Até <strong>1.000 NMP/100 mL</strong> é satisfatório. Acima de
+              <strong>2.500</strong> em uma amostra, a praia fica imprópria.</p>
+          </div>
+          <div class="guide-card">
+            <div class="ic">🔬</div>
+            <h3>Enterococos</h3>
+            <p>Bactérias mais resistentes à água salgada. Até <strong>100 UFC/100 mL</strong> é satisfatório.
+              Acima de <strong>400</strong> em uma amostra, a praia fica imprópria.</p>
+          </div>
+        </div>
+        <div class="tips">
+          <div class="tip"><span>🌧️</span><div><strong>Evite o banho até 24 h depois de chuva forte.</strong> A chuva arrasta esgoto e lixo das ruas e rios para o mar.</div></div>
+          <div class="tip"><span>🚱</span><div><strong>Fique longe de valas, canais e "línguas negras"</strong>, mesmo em praias próprias.</div></div>
+          <div class="tip"><span>🗑️</span><div><strong>Leve seu lixo de volta.</strong> Plástico na areia vira microplástico no oceano.</div></div>
+          <div class="tip"><span>🪼</span><div><strong>Viu óleo, animais encalhados ou muitas águas-vivas?</strong> Avise os salva-vidas ou a Defesa Civil.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ongs">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Quem cuida do mar</span>
+          <h2>ONGs que atuam pelo oceano</h2>
+          <p>Organizações que trabalham pela vida marinha e pela limpeza do litoral catarinense e brasileiro.
+            Apoie, seja voluntário ou participe de um mutirão de limpeza.</p>
+        </div>
+        <div id="ngo-grid" class="ngo-grid"></div>
+        <div class="cta-band">
+          <div>
+            <h3>Participe de um mutirão de limpeza de praia</h3>
+            <p>Em setembro acontece o Dia Mundial da Limpeza (World Cleanup Day). Procure uma ação perto de você.</p>
+          </div>
+          <a class="btn btn-dark" href="https://www.worldcleanupday.org" target="_blank" rel="noopener">Encontrar uma ação</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>
+        <div class="footer-brand"><img src="/img/logo.svg" alt=""><strong>Oceano Vivo</strong></div>
+        <p>Monitoramento cidadão da qualidade das praias de Santa Catarina. Versão MVP. Os dados exibidos
+          podem conter valores de demonstração. Para decisões oficiais, consulte o IMA-SC.</p>
+      </div>
+      <div>
+        <h4>Fontes</h4>
+        <ul>
+          <li><a href="https://balneabilidade.ima.sc.gov.br" target="_blank" rel="noopener">Balneabilidade IMA-SC</a></li>
+          <li><a href="https://open-meteo.com" target="_blank" rel="noopener">Previsão do tempo: Open-Meteo</a></li>
+          <li><a href="https://conama.mma.gov.br" target="_blank" rel="noopener">Resolução CONAMA 274/2000</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#monitor">Mapa das praias</a></li>
+          <li><a href="#guia">Como ler os dados</a></li>
+          <li><a href="#ongs">ONGs</a></li>
+          <li><a href="/admin">Área restrita</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <div class="drawer-backdrop" data-close></div>
+  <aside class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" aria-hidden="true">
+    <div class="drawer-head">
+      <button class="drawer-close" data-close aria-label="Fechar">×</button>
+      <h2 id="drawer-title"></h2>
+      <p id="drawer-sub"></p>
+    </div>
+    <div class="drawer-body" id="drawer-body"></div>
+  </aside>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/map.js"></script>
+  <script src="/js/weather.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

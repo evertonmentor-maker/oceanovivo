@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Oceano Vivo">
+  <defs>
+    <linearGradient id="ov-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#19C3B2"/>
+      <stop offset="1" stop-color="#0A4D68"/>
+    </linearGradient>
+    <linearGradient id="ov-leaf" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E8FFF7"/>
+      <stop offset="1" stop-color="#8EF0CF"/>
+    </linearGradient>
+    <clipPath id="ov-clip"><circle cx="32" cy="32" r="30"/></clipPath>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="url(#ov-bg)"/>
+  <g clip-path="url(#ov-clip)">
+    <!-- gota-folha: água limpa que gera vida -->
+    <path d="M32 9 C25 17 22 23 22 28.5 C22 34 26.5 38 32 38 C37.5 38 42 34 42 28.5 C42 23 39 17 32 9 Z" fill="url(#ov-leaf)"/>
+    <path d="M32 36 C31 29 32.5 21 36 16" fill="none" stroke="#0E8C8A" stroke-width="1.8" stroke-linecap="round"/>
+    <path d="M32.6 28 L37.2 24.6 M32.2 32.4 L28 29.4" stroke="#0E8C8A" stroke-width="1.4" stroke-linecap="round"/>
+    <!-- ondas -->
+    <path d="M0 44 C6 40 11 40 16 44 S26 48 32 44 S42 40 48 44 S58 48 64 44 V64 H0 Z" fill="#FFFFFF" opacity=".95"/>
+    <path d="M0 52 C6 48 11 48 16 52 S26 56 32 52 S42 48 48 52 S58 56 64 52 V64 H0 Z" fill="#8EE3F0" opacity=".9"/>
+  </g>
+</svg>

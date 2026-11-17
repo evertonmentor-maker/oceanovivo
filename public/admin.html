@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Área restrita — Oceano Vivo</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0A4D68">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="admin-body">
+
+  <!-- Login -->
+  <div id="login-view" class="login-wrap" hidden>
+    <form id="login-form" class="login-card" novalidate>
+      <a class="brand" href="/"><img src="/img/logo.svg" alt=""><span class="brand-name">Oceano<span>Vivo</span></span></a>
+      <h1>Área restrita</h1>
+      <div class="field">
+        <label for="usuario">Usuário</label>
+        <input id="usuario" name="usuario" class="input" autocomplete="username" required>
+      </div>
+      <div class="field">
+        <label for="senha">Senha</label>
+        <input id="senha" name="senha" class="input" type="password" autocomplete="current-password" required>
+      </div>
+      <p class="form-error" id="login-error" role="alert"></p>
+      <button class="btn btn-dark" style="width:100%" type="submit">Entrar</button>
+      <p class="muted small" style="text-align:center;margin:16px 0 0"><a href="/">← Voltar ao site</a></p>
+    </form>
+  </div>
+
+  <!-- Painel -->
+  <div id="admin-view" hidden>
+    <header class="site-header">
+      <div class="container">
+        <a class="brand" href="/"><img src="/img/logo.svg" alt=""><span class="brand-name">Oceano<span>Vivo</span></span></a>
+        <nav class="nav" style="display:flex;position:static;flex-direction:row;padding:0;border:0;background:none">
+          <a href="/" target="_blank">Ver site</a>
+          <a href="#" id="logout" class="nav-cta">Sair</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container admin-layout">
+      <section class="admin-panel" style="padding:0">
+        <div class="admin-panel-head">
+          <h2>Praias</h2>
+          <button class="btn btn-dark btn-sm" id="new-beach">+ Nova praia</button>
+        </div>
+        <div style="padding:12px 12px 0"><input id="admin-search" class="input" type="search" placeholder="Filtrar…" aria-label="Filtrar praias"></div>
+        <ul id="admin-list" class="admin-list"></ul>
+      </section>
+
+      <div id="editor" style="display:grid;gap:20px;padding:0">
+        <div class="admin-panel"><div class="admin-panel-body empty">Selecione uma praia à esquerda ou cadastre uma nova.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
