@@ -64,6 +64,6 @@ O PythonAnywhere só roda apps Python (WSGI), por isso existe o `app.py` (Flask)
    sys.path.insert(0, '/home/USUARIO/oceanovivo')
    from app import app as application
    ```
-5. **Reload** na aba Web. A cada 3 meses, clique em "Run until 3 months from today" para manter o app ativo.
+5. **Reload** na aba Web. Todo mês, entre na aba Web e clique em "Run until 1 month from today" para manter o app ativo.
 
 Os dados (`data/db.json`) ficam em disco persistente, então sobrevivem a reinícios.
