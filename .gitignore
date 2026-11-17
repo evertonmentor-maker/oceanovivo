@@ -5,3 +5,4 @@ data/db.json.tmp
 
 # graft's local graph cache — regenerable, not committed (run `graft build`).
 /graft/
+data/.session_secret

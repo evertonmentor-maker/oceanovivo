@@ -46,3 +46,24 @@ $env:GOOGLE_MAPS_API_KEY="sua-chave"; $env:ADMIN_PASSWORD="outra-senha"; npm sta
 - `data/seed.json`: carga inicial com 18 praias reais de SC. **Os boletins são fictícios**, só para
   demonstração. Substitua pelos laudos oficiais do IMA-SC (https://balneabilidade.ima.sc.gov.br).
 - `data/db.json`: banco em uso, criado a partir do seed no primeiro início. Apague-o para voltar ao estado inicial.
+
+## Deploy no PythonAnywhere (plano gratuito, sem cartão)
+
+O PythonAnywhere só roda apps Python (WSGI), por isso existe o `app.py` (Flask), equivalente ao `server.js`.
+
+1. Crie a conta em pythonanywhere.com (o nome de usuário vira o endereço: `USUARIO.pythonanywhere.com`).
+2. Aba **Consoles** → **Bash**:
+   ```bash
+   git clone https://github.com/USUARIO_GITHUB/oceanovivo.git oceanovivo
+   cd oceanovivo && pip3 install --user -r requirements.txt
+   ```
+3. Aba **Web** → **Add a new web app** → **Manual configuration** → Python 3.12 (ou a mais nova).
+4. Na aba **Web**, clique no link do arquivo **WSGI configuration file**, apague tudo e coloque:
+   ```python
+   import sys
+   sys.path.insert(0, '/home/USUARIO/oceanovivo')
+   from app import app as application
+   ```
+5. **Reload** na aba Web. A cada 3 meses, clique em "Run until 3 months from today" para manter o app ativo.
+
+Os dados (`data/db.json`) ficam em disco persistente, então sobrevivem a reinícios.
